@@ -29,6 +29,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  width: 100%;
 }
 
 h1 {
@@ -56,12 +57,197 @@ h1 {
   filter: drop-shadow(0 0 2em #3178c6aa);
 }
 
-.card {
-  padding: 2em;
+.lala{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
 }
+
+.la{
+  margin: 0 3vw;
+}
+.card
+{
+  position: relative;
+  width: 300px;
+  min-height: 250px;
+  background: #333;
+  transition: 0.5s;
+  /*gap: 2em;*/
+  margin: 60px 20px 50px 20px;
+  backdrop-filter: blur(7px);
+
+}
+.card:hover
+{
+  /*height: 80%;*/
+  /*margin: 60px 20px 100px 20px;*/
+}
+.card .lines
+{
+  position: absolute;
+  inset: 0;
+  background: #000;
+  overflow: hidden;
+
+}
+.card .lines::before
+{
+ content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10000px;
+  height: 120px;
+  background: linear-gradient(transparent,#e200d8,#e200d8,#e200d8,transparent);
+  animation: animate 4s linear infinite;
+  animation-play-state: paused;
+}
+.card:hover .lines::before
+{
+  animation-play-state: running;
+}
+.card .lines::after
+{
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: #292929
+}
+.card .imgbox{
+  position: absolute;
+  width: 150px;
+  height: 225px;
+  left: 50%;
+  top: -30%;
+  transform: translateX(-50%);
+  background: #000;
+  transition: 0.5s;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.card:hover .imgbox{
+  top: 25px;
+  width: 200px;
+  height: 300px;
+}
+.card .imgbox::before{
+   content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 800px;
+  height: 150px;
+  transform: translate(-50%,-50%);
+  background: linear-gradient(transparent, rgb(216, 226, 0), #d8e200, rgb(216, 226, 0),transparent);
+  animation: animate2 4s linear infinite;
+  animation-play-state: paused;
+}
+.card:hover .imgbox::before{
+  animation-play-state: running;
+}
+.card .imgbox::after{
+  content: '';
+  position: absolute;
+  inset:3px ;
+  background: #292929;
+}
+.card .imgbox img{
+ position: absolute;
+  z-index: 1;
+  height: 96%;
+  transition: 0.5s;
+}
+.card .content{
+  /*position: absolute;*/
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 120px;
+  /*margin-bottom: 50px;*/
+
+}
+
+.card:hover .content{
+  padding-top: 300px;
+}
+.card .content .details{
+  padding: 30px 20px;
+  width: 100%;
+  transition: 0.5s;
+  transform: translateY(0);
+}
+.card:hover .content .details{
+  /*transform: translateY(100px);*/
+}
+.card .content .details h2{
+ font-size: 1.5em;
+  font-weight: 500;
+  color: #45f3ff;
+  line-height: 1.2em;
+}
+.card .content .details p{
+
+   /*transition: 5s;*/
+   display: none;
+   color: #ffffff;
+
+ }
+.card:hover .content .details p{
+  /*transition: 5s;*/
+  display: block;
+}
+
+@keyframes animate2 {
+  0%{
+    transform: translate(-50%,-50%) rotate(360deg);
+  }
+  100%{
+    transform: translate(-50%,-50%) rotate(0deg);
+  }
+}
+@keyframes animate {
+  0%{
+      transform: translate(-50%,-50%) rotate(0deg);
+  }
+  100%{
+    transform: translate(-50%,-50%) rotate(360deg);
+  }
+}
+
+.film
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+  padding: 50px 0 300px 0;
+  position: relative;
+}
+
 
 .read-the-docs {
   color: #888;
+}
+.resetbtn{
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
 }
 
 button {
