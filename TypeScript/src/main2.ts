@@ -221,6 +221,9 @@ function randList(list:Film[],el:HTMLElement):void
 }
 randList(a,document.querySelector(".film") as HTMLElement)
 
+
+
+
 function localStore()
 {
     if(localStorage.length!==0)
