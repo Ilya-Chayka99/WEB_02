@@ -165,9 +165,9 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 `
 
 const form = document.querySelector('form');
-if(form)
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
+if(form)addEventListener('submit', (event) => {
+    event.preventDefault
+    form.();
         let name:string = form.text.value;
         let url:string = form.url.value;
         let year:number = form.year.value;
